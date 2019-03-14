@@ -1,0 +1,27 @@
+.caja {
+    margin: 10px;
+    margin-left: 100px;
+    border-radius: 10px;
+    background-color: white;
+    width: 250px;
+    padding: 10px;
+    align-content: center;
+    text-align: center;
+}
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+.listado {
+  margin: 10px;
+}
+
+textarea{  
+  height: 150px;
+}
+
+.enviar {
+  border: 1px solid rgb(34, 188, 248);
+}
