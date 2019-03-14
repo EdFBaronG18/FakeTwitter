@@ -1,12 +1,12 @@
 .caja {
     margin: 10px;
-    margin-left: 100px;
     border-radius: 10px;
     background-color: white;
     width: 250px;
     padding: 10px;
     align-content: center;
     text-align: center;
+    float: left;
 }
 
 .example-button-row button,
@@ -15,13 +15,19 @@
 }
 
 .listado {
+  width: 500px;
   margin: 10px;
+  margin-left: 300px;
 }
 
-textarea{  
-  height: 150px;
+.area{ 
+  height: 200px;
+  resize: none;
 }
 
 .enviar {
-  border: 1px solid rgb(34, 188, 248);
+  color: #ffffff;
+  background-color: #008abe;
+  border: 1px solid #008abe;
+  border-radius: 20px;
 }

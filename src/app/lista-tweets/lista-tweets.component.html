@@ -1,30 +1,38 @@
-<div *ngFor="let tweet of misTweets" class="listado">
-    <app-detalle-tweet [mySelectedTweet]="tweet"></app-detalle-tweet>
-</div>
+<div class="container">
 
-
-<div class="caja">
-    <mat-form-field class="full-width">
+  <div class="caja">
+    <mat-form-field>
       <input matInput placeholder="Autor" [(ngModel)]="miTweet.autor">
     </mat-form-field>
 
     <br>
 
-    <mat-form-field class="full-width">
+    <mat-form-field>
       <input matInput placeholder="ID" [(ngModel)]="miTweet.id">
     </mat-form-field>
 
     <br>
 
     <p>
-      <mat-form-field class="full-width">
-        <textarea matInput placeholder="Tweet" [(ngModel)]="miTweet.texto">
+      <mat-form-field>
+        <textarea matInput cdkTextareaAutosize placeholder="¿Qué está pasando?" [(ngModel)]="miTweet.texto">
         </textarea>
       </mat-form-field>
     </p>
 
-    <button mat-stroked-button (click)="addNewTweet()" class="enviar">Enviar tweet</button>
+    <button mat-stroked-button (click)="addNewTweet()" class="enviar">Twittear</button>
+  </div>
+
+
+  <div class="listado">
+    <div *ngFor="let tweet of misTweets.slice().reverse() let i = index;">
+      <app-detalle-tweet [mySelectedTweet]="tweet"></app-detalle-tweet>
+    </div>
+  </div>
+
 </div>
+
+
  
 
 
