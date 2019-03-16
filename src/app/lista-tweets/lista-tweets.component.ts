@@ -50,6 +50,7 @@ export class ListaTweetsComponent implements OnInit {
 
   addNewTweet (){
     this.misTweets.push(this.miTweet);
+     this.miTweet = new Tweet();
     }
    
 
