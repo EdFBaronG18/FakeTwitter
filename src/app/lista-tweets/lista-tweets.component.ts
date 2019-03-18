@@ -26,8 +26,13 @@ export class ListaTweetsComponent implements OnInit {
   }
 
   addNewTweet (){
+    
+    var dia : Date;
+    dia = new Date();
+
+    this.miTweet.fecha = dia.toLocaleDateString() + " a las " + dia.toLocaleTimeString();
     this.misTweets.push(this.miTweet);
-     this.miTweet = new Tweet();
+    this.miTweet = new Tweet();
     }
 
   ngOnInit() {

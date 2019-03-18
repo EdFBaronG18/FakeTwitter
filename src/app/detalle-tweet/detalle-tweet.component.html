@@ -1,13 +1,22 @@
 <mat-card class="example-card">
+
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{mySelectedTweet.autor}}</mat-card-title>
-    <mat-card-subtitle>@{{mySelectedTweet.idUser}}</mat-card-subtitle>
-    <mat-card-subtitle>{{mySelectedTweet.id}}</mat-card-subtitle>
+
+    <mat-card-title>
+      <span class="user">{{mySelectedTweet.autor}} • </span>
+      <span class="username">@{{mySelectedTweet.idUser}}</span> 
+    </mat-card-title>
+
+    <mat-card-subtitle>
+      <span class="username">{{mySelectedTweet.fecha}}</span>
+    </mat-card-subtitle>
   </mat-card-header>
+
   <mat-card-content>
     <p class="formato">
       {{mySelectedTweet.texto}}
     </p>
   </mat-card-content>
+
 </mat-card>
