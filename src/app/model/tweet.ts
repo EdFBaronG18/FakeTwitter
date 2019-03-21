@@ -1,6 +1,6 @@
 export class Tweet {
-    public idUser: String;
-    public autor: String;
-    public texto: String;
-    public fecha : String;
+  public idTweet: number;
+  // public autor: String;
+  public contentTweet: String;
+  public dateTweet: String;
 }
