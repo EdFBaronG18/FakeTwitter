@@ -39,6 +39,6 @@ export class ListaTweetsComponent implements OnInit {
     //this.misTweets.push(this.miTweet);
     this.miTweet = new Tweet();
   }
-
+  
   ngOnInit() {}
 }
