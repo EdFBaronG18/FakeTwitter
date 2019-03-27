@@ -1,12 +1,12 @@
 .caja {
-    margin: 10px;
-    border-radius: 10px;
-    background-color: white;
-    width: 250px;
-    padding: 10px;
-    align-content: center;
-    text-align: center;
-    float: left;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: white;
+  width: 250px;
+  padding: 10px;
+  align-content: center;
+  text-align: center;
+  float: left;
 }
 
 .example-button-row button,
@@ -26,7 +26,7 @@
   margin-left: 800px;
 }
 
-.area{ 
+.area {
   height: 200px;
   resize: none;
 }
@@ -36,4 +36,10 @@
   background-color: #008abe;
   border: 1px solid #008abe;
   border-radius: 20px;
+}
+
+.usuarioPerfil {
+  margin-top: 240px;
+  position: absolute;
+  border-radius: 10px;
 }

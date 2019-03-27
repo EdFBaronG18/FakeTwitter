@@ -1,21 +1,19 @@
-<mat-card class="example-card">
-
+<div class="container">
+  <mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-  
-      <mat-card-title>
-        <span class="user">{{mySelectedTweet.userTweet.name}}  </span>
-      </mat-card-title>
-      
-      <mat-card-subtitle>
-          <span class="username">@{{mySelectedTweet.userTweet.username}}</span> <!-- -->
-      </mat-card-subtitle>
     </mat-card-header>
-    
-    <mat-card-content>
-      Correo: <span class="username">{{mySelectedTweet.userTweet.email}}</span> <br>
-      Celular: <span class="username">{{mySelectedTweet.userTweet.cellphone}}</span>
 
+    <mat-card-content>
+      <span class="username">Id: {{ mySelectedTweet.userTweet.id }}</span>
+      <br />
+      <span class="user">{{ mySelectedTweet.userTweet.name }} </span>
+      <br />
+      <span class="username">@{{ mySelectedTweet.userTweet.username }} </span>
+      <br />
+      <span class="username">{{ mySelectedTweet.userTweet.email }} </span>
+      <br />
+      <span class="username">{{ mySelectedTweet.userTweet.cellphone }} </span>
     </mat-card-content>
-  
   </mat-card>
+</div>
