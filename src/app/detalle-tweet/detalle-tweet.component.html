@@ -4,12 +4,12 @@
     <div mat-card-avatar class="example-header-image"></div>
 
     <mat-card-title>
-      <span class="user">{{mySelectedTweet.idTweet}} • </span>
-      <!-- <span class="username">@{{mySelectedTweet.idUser}}</span>  -->
+      <span class="user">{{mySelectedTweet.userTweet.name}}  </span>
     </mat-card-title>
 
     <mat-card-subtitle>
-      <span class="username">{{mySelectedTweet.dateTweet}}</span>
+    <span class="username">@{{mySelectedTweet.userTweet.username}}</span> -  <!-- -->
+    <span class="username">{{mySelectedTweet.dateTweet}}</span>
     </mat-card-subtitle>
   </mat-card-header>
 

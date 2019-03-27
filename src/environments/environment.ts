@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  urlConsultaTweets: "http://localhost:8080/getAllTweets",
-  urlInsertaTweets: "http://localhost:8080/addTweetByUserId"
+  urlConsultaTweets:  "http://localhost:8081/getAllTweets",
+  urlInsertaTweets:   "http://localhost:8081/addTweetByUsername",
+  urlGetUser:         "http://localhost:8081/getUserByUsername"
 };
 
 /*

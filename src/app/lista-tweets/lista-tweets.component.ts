@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Tweet } from "../model/tweet";
+import { Tweet, User } from "../model/tweet";
 
 import { TweetsService } from "../Servicios/tweets.service";
 
@@ -11,12 +11,24 @@ import { TweetsService } from "../Servicios/tweets.service";
 export class ListaTweetsComponent implements OnInit {
   misTweets: Array<Tweet>;
   miTweet: Tweet;
+  miUsers: Map<number, User>;
 
   constructor(private twServicio: TweetsService) {
     this.misTweets = new Array();
     this.miTweet = new Tweet();
+    this.miUsers = new Map();
 
     twServicio.getAllTweets().subscribe(misTweetsObs => {
+      console.log(misTweetsObs);
+
+      // Create list for save users
+      misTweetsObs.forEach(element => {
+        if(typeof element.userTweet == "object")
+          this.miUsers.set(element.userTweet.id, element.userTweet);
+        else
+          element.userTweet = this.miUsers.get(element.userTweet);
+        
+      });
       this.misTweets = misTweetsObs;
     });
   }
