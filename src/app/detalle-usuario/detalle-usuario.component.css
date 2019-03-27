@@ -1,21 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
 .example-card {
-    max-width: 400px;
-    min-width: 400px;
-    margin: 10px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+  border-radius: 10px;
+  margin: 10px;
+  width: 237px;
+  font-family: "Poppins";
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+  height: 230px;
+  width: 230px;
+  margin: auto;
+}
 
 .username {
-  font-size: 13px;
+  font-size: 14px;
   color: gray;
   font-weight: normal;
-  font-family: sans-serif;
+  text-align: center;
 }
 
 .user {
-  font-size: 16px;
+  font-size: 1.2em;
+  font-weight: bold;
 }

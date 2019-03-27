@@ -11,6 +11,5 @@ export class User{
   public username   : String;
   public name       : String;
   public email      : String;
-  public cellphone  : number;
-  
+  public cellphone  : number; 
 }
