@@ -13,13 +13,15 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 
 import { HttpClientModule} from "@angular/common/http";
+import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DetalleTweetComponent,
-    ListaTweetsComponent
+    ListaTweetsComponent,
+    DetalleUsuarioComponent
   ],
   imports: [
     BrowserModule,
