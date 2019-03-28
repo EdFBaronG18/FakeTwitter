@@ -1,1 +1,33 @@
-<app-lista-tweets></app-lista-tweets>
+
+<mat-sidenav-container>
+    
+        <mat-sidenav #menu mode="push" closed class="side-container">
+        <h1><img width="30%" height="10%" alt="Twitter Logo"
+       src="http://www.christiandve.com/wp-content/uploads/2014/08/Twitter-logo-2006.png" ></h1>
+       <button mat-button routerLink="/tweets" >
+           <mat-icon class="menu-icon" aria-hidden="false" aria-label="Menu
+          Icon">visibility</mat-icon>
+           <span>Ver Tweets</span>
+           </button><br>
+           <button mat-button routerLink="/new-tweet">
+           <mat-icon class="menu-icon" aria-hidden="false" aria-label="Menu
+          Icon">create</mat-icon>
+           <span>Crear tweet</span>
+          </button>
+        </mat-sidenav>
+        <mat-sidenav-content width="100%" height="100%" style="background-color:#00acee;">
+                <mat-toolbar class="toolbar-main">
+                        <mat-toolbar-row>
+                        <span>Twitter</span>
+                        <span class="menu-spacer"></span>
+                        <button mat-button (click)="menu.toggle()">
+                            <mat-icon class="menu-icon" aria-hidden="false" aria-label="Menu
+                        Icon">menu</mat-icon>
+                        </button>
+                        </mat-toolbar-row>
+                </mat-toolbar>
+                <router-outlet></router-outlet>
+        </mat-sidenav-content>
+</mat-sidenav-container>
+
+

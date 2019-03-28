@@ -8,12 +8,18 @@ import { DetalleTweetComponent } from './detalle-tweet/detalle-tweet.component';
 import { ListaTweetsComponent } from './lista-tweets/lista-tweets.component';
 
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
+
 
 import { HttpClientModule} from "@angular/common/http";
 import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
+import { InsertarTweetComponent } from './insertar-tweet/insertar-tweet.component';
 
 
 @NgModule({
@@ -21,7 +27,8 @@ import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.compo
     AppComponent,
     DetalleTweetComponent,
     ListaTweetsComponent,
-    DetalleUsuarioComponent
+    DetalleUsuarioComponent,
+    InsertarTweetComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +41,10 @@ import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.compo
     FormsModule,
     MatInputModule,
     MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
+
     HttpClientModule
   ],
   providers: [],

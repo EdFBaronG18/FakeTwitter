@@ -40,6 +40,6 @@
 
 .usuarioPerfil {
   margin-top: 240px;
-  position: absolute;
+  position: fixed;
   border-radius: 10px;
 }
