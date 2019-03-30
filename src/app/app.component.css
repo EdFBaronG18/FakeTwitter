@@ -5,15 +5,14 @@
     .menu-spacer {
     flex: 1 1 auto;
     }
+    
 .toolbar-main{
     background-color: white;
     color:  #66757f;
     font-family: 'Segoe UI';
-    display: block;
-    position: fixed;
 }
-.side-container {
-    
+
+   .side-container {
     position: fixed;
     top: 0;
     bottom: 0;
