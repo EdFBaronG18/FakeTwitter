@@ -25,6 +25,9 @@ export class TweetsService {
     return this.http.post(environment.urlInsertaTweets, body).subscribe();
   }
 
+
+
+
   /*
   getUserbyUsername(username: String) : Observable<User>{
     console.log(username);

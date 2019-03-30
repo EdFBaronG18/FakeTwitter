@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   urlConsultaTweets:  "http://localhost:8080/getAllTweets",
   urlInsertaTweets:   "http://localhost:8080/addTweetByUsername",
-  urlGetUser:         "http://localhost:8080/getUserByUsername"
+  urlGetUser:         "http://localhost:8080/getUserByUsername",
+  urlAutenticate:     "http://localhost:8080/validatedUser"
 };
 
 /*

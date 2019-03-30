@@ -1,0 +1,17 @@
+<div class="container">
+  <h3>{{message}}</h3>
+  <div class="caja">
+    <mat-form-field>
+      <input matInput placeholder="Nombre de Usuario" [(ngModel)]="username" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Contraseña" [(ngModel)]="password" type="password"/>
+    </mat-form-field>
+
+    <button mat-stroked-button (click)="login()" class="enviar">
+      Iniciar Sesion
+    </button>
+  </div>
+
+</div>

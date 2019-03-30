@@ -20,6 +20,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { HttpClientModule} from "@angular/common/http";
 import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
 import { InsertarTweetComponent } from './insertar-tweet/insertar-tweet.component';
+import { LogInComponent } from './log-in/log-in.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { InsertarTweetComponent } from './insertar-tweet/insertar-tweet.componen
     DetalleTweetComponent,
     ListaTweetsComponent,
     DetalleUsuarioComponent,
-    InsertarTweetComponent
+    InsertarTweetComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
