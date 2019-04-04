@@ -2,61 +2,36 @@ import { Injectable } from '@angular/core';
 import { HttpParams, HttpClient } from '@angular/common/http';
 
 import { environment } from "src/environments/environment";
+import { Observable } from 'rxjs';
+import { User } from '../model/tweet';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserInformationService {
 
-  private username: String;
-  private gusto: String;
+  private user: User;
+  
   //private username: String;
 
 
   constructor(private http: HttpClient) { 
-    this.username = "not_user";
+    this.user = null;
   }
 
-  autenticateUser(username: String, password: String){
-    if(username == "Alex_gal" && password == "111111"){
-      return{
-        message: 'Login succesfull',
-        user: {
-          username: 'Alex_gal',
-          gusto: 'Gatos'
-        }
-      };
-    }
-    else{
-      return{
-        message: 'Login failed',
-        user: {
-          username: '',
-          gusto: ''
-        }
-      };
-    }
+  getUser(): User{
+    return this.user;
+  }
+  fillUserInfo(user: User){
+    this.user = user;
   }
 
-  fillUserInfo(username: String, gusto: String){
-    this.username = username;
-    this.gusto = gusto;
+  getName(): String{
+    return this.user.name;
   }
-
   logout(){
-    this.username = '';
-    this.gusto = '';
+    this.user = null;
   }
-
-
-  getUsername(){
-    return this.username;
-  }
-
-  getGusto(){
-    return this.gusto;
-  }
-
 
   autenticate(username: String, password: String) {
     //console.log("EL TWEET A INSERTAR:", tweet);
@@ -65,7 +40,7 @@ export class UserInformationService {
       .set("username", username + "")
       .set("password", password + "");
 
-    return this.http.post(environment.urlAutenticate, body).subscribe();
+    return this.http.post(environment.urlAutenticate, body);
   }
 
 

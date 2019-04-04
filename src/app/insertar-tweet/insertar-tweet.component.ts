@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TweetsService } from '../Servicios/tweets.service';
 import { Tweet } from '../model/tweet';
+import { UserInformationService } from '../Servicios/user-information.service';
 
 @Component({
   selector: 'app-insertar-tweet',
@@ -9,9 +10,11 @@ import { Tweet } from '../model/tweet';
 })
 export class InsertarTweetComponent implements OnInit {
   miTweet: Tweet;
-
-  constructor(private twServicio: TweetsService) {
+  name: String;
+  constructor(private twServicio: TweetsService, private userInfo: UserInformationService) {
     this.miTweet = new Tweet();
+    this.name = userInfo.getName();
+    this.miTweet.username = userInfo.getUser().username;
    }
 
   ngOnInit() {

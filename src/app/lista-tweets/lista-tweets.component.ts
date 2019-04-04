@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { Tweet, User } from "../model/tweet";
+import { Router } from '@angular/router';
 
 import { TweetsService } from "../Servicios/tweets.service";
+import { UserInformationService } from '../Servicios/user-information.service';
 
 @Component({
   selector: "app-lista-tweets",
@@ -14,7 +16,11 @@ export class ListaTweetsComponent implements OnInit {
   miUsers: Map<number, User>;
   tweetClicked: Tweet;
 
-  constructor(private twServicio: TweetsService) {
+  constructor(private twServicio: TweetsService, private userInfo: UserInformationService,private router: Router) {
+    if(userInfo.getUser() == null){
+      this.router.navigateByUrl("/login");
+    }
+
     this.misTweets = new Array();
     this.miTweet = new Tweet();
     this.miUsers = new Map();

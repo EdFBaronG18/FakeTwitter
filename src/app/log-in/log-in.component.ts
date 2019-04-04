@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserInformationService } from '../Servicios/user-information.service';
 import { Router } from '@angular/router';
+import { User } from '../model/tweet';
 
 
 @Component({
@@ -22,23 +23,23 @@ export class LogInComponent implements OnInit {
   }
 
   async login(){
-
-    let responseAutentication: any = await this.servicioLogin.autenticate(this.username, this.password);
-    //responseAutentication = responseAutentication[0];
-
     
-    console.log(responseAutentication);
-    
-    if(responseAutentication
-       != null){
-        //let user = responseAutentication.user;
-        //this.servicioLogin.fillUserInfo(user.username, user.gusto);
-        this.router.navigateByUrl("/tweets");
+    let responseAutentication: any;
+    let user : User;
+    this.servicioLogin.autenticate(this.username, this.password).subscribe(
+      dataResponse => {
+        responseAutentication = dataResponse;
+          console.log(responseAutentication);
+          user = <User>responseAutentication;
 
-    }
-    else{
-      this.message = "Usuario o contraseña incorrecta.";
-    }
+          if(user != null){
+              this.servicioLogin.fillUserInfo(user);
+              this.router.navigateByUrl("/tweets");
+          }
+          else
+            this.message = "Usuario o contraseña incorrecta.";
+      }, 
+    );
   }
 
 }
