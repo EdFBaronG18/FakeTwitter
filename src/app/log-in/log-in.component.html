@@ -2,15 +2,15 @@
   <h3>{{message}}</h3>
   <div class="caja">
     <mat-form-field>
-      <input matInput placeholder="Nombre de Usuario" [(ngModel)]="username" />
+      <input matInput placeholder="{{'LOGIN-USERNAME'|translate}}" [(ngModel)]="username" />
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Contraseña" [(ngModel)]="password" type="password"/>
+      <input matInput placeholder="{{'LOGIN-PASSWORD'|translate}}" [(ngModel)]="password" type="password"/>
     </mat-form-field>
 
     <button mat-stroked-button (click)="login()" class="enviar">
-      Iniciar Sesion
+        {{'LOGIN-LOGIN'|translate}}
     </button>
   </div>
 

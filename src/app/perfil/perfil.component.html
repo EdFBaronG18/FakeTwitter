@@ -7,7 +7,7 @@
       </div>
   </div>
   <div class="listado">
-    <h1>Mis Tweets</h1>
+    <h1>{{"PROFILE-TITLE"| translate}}</h1>
     <div *ngFor="let tweet of tweets.slice().reverse(); let i = index">
       <app-detalle-tweet
         [mySelectedTweet]="tweet"

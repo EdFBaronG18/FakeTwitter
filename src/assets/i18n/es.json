@@ -1,0 +1,15 @@
+{
+    "TITLE_APP": "Twitter Falso",
+    "DESCRIPTION_APP": "Esta es una aplcición de ejemplo par aprender las bases de Angular",
+    "LOG-OUT": "Cerrar Sesión",
+    "BAR-TWEETS-BUTTON": "Ver Tweets",
+    "BAR-TWEETS-CREATE": "Crear Tweet",
+    "BAR-TWEETS-PROFILE": "Mi Perfil",
+    "NEW-TWEET-HI": "Hola",
+    "NEW-TWEET-QUESTION": "¿Qué está pasando?",
+    "NEW-TWEET-BUTTON": "Twittear",
+    "LOGIN-USERNAME": "Nombre de Usuario",
+    "LOGIN-PASSWORD": "Contraseña",
+    "LOGIN-LOGIN": "Iniciar Sesión",
+    "PROFILE-TITLE": "Mis Tweets"
+}

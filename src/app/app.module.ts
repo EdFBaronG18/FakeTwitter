@@ -8,7 +8,7 @@ import { DetalleTweetComponent } from './detalle-tweet/detalle-tweet.component';
 import { ListaTweetsComponent } from './lista-tweets/lista-tweets.component';
 
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule, MatInputModule} from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatSlideToggleModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
@@ -17,13 +17,15 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 
-import { HttpClientModule} from "@angular/common/http";
+import { HttpClientModule, HttpClient} from "@angular/common/http";
 import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
 import { InsertarTweetComponent } from './insertar-tweet/insertar-tweet.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { NeedAuthGuard } from './NeedAuthGuard';
-
+import {TranslateModule} from '@ngx-translate/core'
+import {TranslateLoader} from '@ngx-translate/core'
+import {TranslateHttpLoader} from '@ngx-translate/http-loader'
 
 @NgModule({
   declarations: [
@@ -39,8 +41,13 @@ import { NeedAuthGuard } from './NeedAuthGuard';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
-
+    TranslateModule.forRoot({
+      loader:{
+        provide:    TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps:       [HttpClient]
+      }
+    }),
     MatCardModule,
     MatFormFieldModule,
     FormsModule,
@@ -49,10 +56,14 @@ import { NeedAuthGuard } from './NeedAuthGuard';
     MatIconModule,
     MatToolbarModule,
     MatSidenavModule,
-
+    MatSlideToggleModule,
     HttpClientModule
   ],
   providers: [NeedAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
+ }
+ 

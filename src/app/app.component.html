@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-  <mat-sidenav #menu mode="side" closed class="side-container">
+  <mat-sidenav #menu mode="push" closed class="side-container">
     <h1>
       <img
         width="30%"
@@ -17,7 +17,7 @@
           Icon"
         >visibility</mat-icon
       >
-      <span>Ver Tweets</span></button>
+      <span>{{'BAR-TWEETS-BUTTON'| translate}}</span></button>
     <br />
     <button mat-button routerLink="/new-tweet">
       <mat-icon
@@ -26,7 +26,7 @@
         aria-label="Menu Icon"
         >create</mat-icon
       >
-      <span>Crear tweet</span>
+      <span>{{'BAR-TWEETS-CREATE'| translate}}</span>
     </button>
     <br />
     <button mat-button routerLink="/profile">
@@ -36,22 +36,22 @@
         aria-label="Menu Icon"
         >person</mat-icon
       >
-      <span>Mi Perfil</span>
+      <span>{{'BAR-TWEETS-PROFILE'| translate}}</span>
     </button>
   </mat-sidenav>
-  <mat-sidenav-content
-    width="50%"
-    height="50%"
-    style="background-color:#00acee;"
-  >
-  
-    <mat-toolbar class="toolbar-main">
+  <mat-sidenav-content class="MyBox">
+
+    <mat-toolbar class="toolbar-main" >
       <mat-toolbar-row>
-        <span>FakeTwitter</span>
+        <span>{{'TITLE_APP'| translate}}</span>
         <span class="menu-spacer"></span>
+        es<mat-slide-toggle
+        [(ngModel)] = "check"
+        (change) = "changeLanguage()"
+         style="margin-left: 1%; margin-right: 1%;"></mat-slide-toggle>en
         <div *ngIf="this.userInfo.isLogged()">
-          <button mat-button (click) ="logout()" >
-            <span>Cerrar Sesion</span>
+          <button mat-button (click) ="logout()" style="width: 100px">
+            <span>{{'LOG-OUT'| translate}}</span>
           </button>
           <button mat-button (click)="menu.toggle()">
             <mat-icon

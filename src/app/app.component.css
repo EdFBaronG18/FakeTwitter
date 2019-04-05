@@ -12,12 +12,17 @@
     font-family: 'Segoe UI';
 }
 
-   .side-container {
-    position: fixed;
+.side-container {
+    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     width: 20%;
-    height: 100%;
-   }
+}
+
+.MyBox{
+    height:100vh;
+    background-color: #00acee;
+    
+}

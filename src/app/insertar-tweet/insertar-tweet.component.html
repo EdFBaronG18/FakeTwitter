@@ -1,12 +1,12 @@
 <div class="container">
   <div class="caja">
-    <h1>Hola {{name}}</h1>
+    <h1>{{'NEW-TWEET-HI'|translate}} {{name}}</h1>
     <p>
       <mat-form-field>
         <textarea
           matInput
           cdkTextareaAutosize
-          placeholder="¿Qué está pasando?"
+          placeholder="{{'NEW-TWEET-QUESTION'|translate}}"
           [(ngModel)]="miTweet.contentTweet"
         >
         </textarea>
@@ -14,7 +14,7 @@
     </p>
 
     <button mat-stroked-button (click)="addNewTweet()" class="enviar">
-      Twittear
+        {{'NEW-TWEET-BUTTON'|translate}}
     </button>
   </div>
 </div>
