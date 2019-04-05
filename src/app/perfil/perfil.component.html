@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="usuarioPerfil">
+      <div>
+          <app-detalle-usuario
+            [mySelectedUser]="user"
+          ></app-detalle-usuario>
+      </div>
+  </div>
+  <div class="listado">
+    <h1>Mis Tweets</h1>
+    <div *ngFor="let tweet of tweets.slice().reverse(); let i = index">
+      <app-detalle-tweet
+        [mySelectedTweet]="tweet"
+      ></app-detalle-tweet>
+    </div>
+  </div>
+</div>
+
+

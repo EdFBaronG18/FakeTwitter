@@ -3,7 +3,9 @@ import { HttpParams, HttpClient } from '@angular/common/http';
 
 import { environment } from "src/environments/environment";
 import { Observable } from 'rxjs';
-import { User } from '../model/tweet';
+import { User, Tweet } from '../model/tweet';
+
+const TOKEN = "TOKEN";
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +33,7 @@ export class UserInformationService {
   }
   logout(){
     this.user = null;
+    localStorage.removeItem(TOKEN);
   }
 
   autenticate(username: String, password: String) {
@@ -43,5 +46,18 @@ export class UserInformationService {
     return this.http.post(environment.urlAutenticate, body);
   }
 
+  getAllTweets(username: String): Observable<Tweet[]>{
+    const body = new HttpParams()
+      .set("username", username + "");
+      return this.http.post<Tweet[]>(environment.urlGetUserTweets, body);
+  }
 
+
+  isLogged(){
+    return localStorage.getItem(TOKEN) != null;
+  }
+
+  loggin(information: string){
+    localStorage.setItem(TOKEN, information);
+  }
 }

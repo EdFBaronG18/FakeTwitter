@@ -16,10 +16,7 @@ export class ListaTweetsComponent implements OnInit {
   miUsers: Map<number, User>;
   tweetClicked: Tweet;
 
-  constructor(private twServicio: TweetsService, private userInfo: UserInformationService,private router: Router) {
-    if(userInfo.getUser() == null){
-      this.router.navigateByUrl("/login");
-    }
+  constructor(private twServicio: TweetsService) {
 
     this.misTweets = new Array();
     this.miTweet = new Tweet();
@@ -33,6 +30,7 @@ export class ListaTweetsComponent implements OnInit {
         if (typeof element.userTweet == "object")
           this.miUsers.set(element.userTweet.id, element.userTweet);
         else element.userTweet = this.miUsers.get(element.userTweet);
+        element.dateTweet = new Date(element.dateTweet);
       });
       this.misTweets = misTweetsObs;
     });
@@ -44,8 +42,8 @@ export class ListaTweetsComponent implements OnInit {
     this.miTweet = new Tweet();
   }
 
-  clickTweet(gg: Tweet) {
-    this.tweetClicked = gg;
+  clickTweet(clicked: Tweet) {
+    this.tweetClicked = clicked;
   }
 
   ngOnInit() {}

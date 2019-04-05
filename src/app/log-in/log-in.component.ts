@@ -9,14 +9,15 @@ import { User } from '../model/tweet';
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.css']
 })
+
 export class LogInComponent implements OnInit {
   private username: String;
   private password: String;
-  private message : String;
+  private message : String; 
 
   constructor(private servicioLogin: UserInformationService, private router: Router) { 
-    this.username = "";
-    this.password = "";
+    if(servicioLogin.isLogged)
+     this.router.navigateByUrl("/tweets");
   }
 
   ngOnInit() {
@@ -33,6 +34,7 @@ export class LogInComponent implements OnInit {
           user = <User>responseAutentication;
 
           if(user != null){
+              this.servicioLogin.loggin(JSON.stringify(user));
               this.servicioLogin.fillUserInfo(user);
               this.router.navigateByUrl("/tweets");
           }
@@ -41,5 +43,4 @@ export class LogInComponent implements OnInit {
       }, 
     );
   }
-
 }

@@ -11,9 +11,13 @@ export class DetalleTweetComponent implements OnInit {
 
   @Input() mySelectedTweet: Tweet;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
   }
 
+  getDateString(): number{ 
+    return this.mySelectedTweet.dateTweet.getDate();
+  }
 }

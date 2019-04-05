@@ -28,24 +28,40 @@
       >
       <span>Crear tweet</span>
     </button>
+    <br />
+    <button mat-button routerLink="/profile">
+      <mat-icon
+        class="menu-icon"
+        aria-hidden="false"
+        aria-label="Menu Icon"
+        >person</mat-icon
+      >
+      <span>Mi Perfil</span>
+    </button>
   </mat-sidenav>
   <mat-sidenav-content
     width="50%"
     height="50%"
     style="background-color:#00acee;"
   >
+  
     <mat-toolbar class="toolbar-main">
       <mat-toolbar-row>
         <span>FakeTwitter</span>
         <span class="menu-spacer"></span>
-        <button mat-button (click)="menu.toggle()">
-          <mat-icon
-            class="menu-icon"
-            aria-hidden="false"
-            aria-label="Menu Icon"
-            >menu</mat-icon
-          >
-        </button>
+        <div *ngIf="this.userInfo.isLogged()">
+          <button mat-button (click) ="logout()" >
+            <span>Cerrar Sesion</span>
+          </button>
+          <button mat-button (click)="menu.toggle()">
+            <mat-icon
+              class="menu-icon"
+              aria-hidden="false"
+              aria-label="Menu Icon"
+              >menu</mat-icon
+            >
+          </button>
+      </div>
       </mat-toolbar-row>
     </mat-toolbar>
     <router-outlet></router-outlet>

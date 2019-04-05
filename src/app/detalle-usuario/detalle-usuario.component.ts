@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Tweet } from '../model/tweet';
+import { Tweet, User } from '../model/tweet';
 
 @Component({
   selector: 'app-detalle-usuario',
@@ -8,7 +8,7 @@ import { Tweet } from '../model/tweet';
 })
 export class DetalleUsuarioComponent implements OnInit {
 
-  @Input() mySelectedTweet: Tweet;
+  @Input() mySelectedUser: User;
 
   constructor() { }
 

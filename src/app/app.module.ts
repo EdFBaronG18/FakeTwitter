@@ -21,6 +21,8 @@ import { HttpClientModule} from "@angular/common/http";
 import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
 import { InsertarTweetComponent } from './insertar-tweet/insertar-tweet.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { NeedAuthGuard } from './NeedAuthGuard';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { LogInComponent } from './log-in/log-in.component';
     ListaTweetsComponent,
     DetalleUsuarioComponent,
     InsertarTweetComponent,
-    LogInComponent
+    LogInComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,7 @@ import { LogInComponent } from './log-in/log-in.component';
 
     HttpClientModule
   ],
-  providers: [],
+  providers: [NeedAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

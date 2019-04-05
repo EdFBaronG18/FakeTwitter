@@ -2,7 +2,7 @@ export class Tweet {
   public idTweet      : number;
   public userTweet    : User;
   public contentTweet : String;
-  public dateTweet    : String;
+  public dateTweet    : Date;
   public username     : String;
 }
 
