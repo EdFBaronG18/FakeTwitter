@@ -5,9 +5,11 @@ import { InsertarTweetComponent } from './insertar-tweet/insertar-tweet.componen
 import { LogInComponent } from './log-in/log-in.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { NeedAuthGuard } from './NeedAuthGuard';
+import { TestPipesComponent } from './test-pipes/test-pipes.component';
 
 const routes: Routes = [
   {path: '', redirectTo :'/login', pathMatch: 'full'},
+  {path: 'pipes', component: TestPipesComponent},
   {path: 'login', component: LogInComponent},
   {path: 'profile', component: PerfilComponent,  canActivate: [NeedAuthGuard]},
   {path: 'tweets', component: ListaTweetsComponent,  canActivate: [NeedAuthGuard]},

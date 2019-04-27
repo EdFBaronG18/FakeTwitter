@@ -24,7 +24,6 @@ export class LogInComponent implements OnInit {
   }
 
   async login(){
-    
     let responseAutentication: any;
     let user : User;
     this.servicioLogin.autenticate(this.username, this.password).subscribe(
@@ -42,5 +41,9 @@ export class LogInComponent implements OnInit {
             this.message = "Usuario o contraseña incorrecta.";
       }, 
     );
+  }
+  
+  async testPipes(){
+     this.router.navigateByUrl("/pipes");
   }
 }

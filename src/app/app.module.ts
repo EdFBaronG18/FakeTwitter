@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetalleTweetComponent } from './detalle-tweet/detalle-tweet.component';
 import { ListaTweetsComponent } from './lista-tweets/lista-tweets.component';
+import { TestPipesComponent } from './test-pipes/test-pipes.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule, MatInputModule, MatSlideToggleModule} from '@angular/material';
@@ -25,7 +26,10 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { NeedAuthGuard } from './NeedAuthGuard';
 import {TranslateModule} from '@ngx-translate/core'
 import {TranslateLoader} from '@ngx-translate/core'
-import {TranslateHttpLoader} from '@ngx-translate/http-loader'
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { CarlosPipe } from './pipes/carlos.pipe';
+import { RootPipe } from './pipes/root.pipe';
+import { PotPipe } from './pipes/pot.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader'
     DetalleUsuarioComponent,
     InsertarTweetComponent,
     LogInComponent,
-    PerfilComponent
+    PerfilComponent,
+    TestPipesComponent,
+    CarlosPipe,
+    RootPipe,
+    PotPipe
   ],
   imports: [
     BrowserModule,
